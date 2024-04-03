@@ -1,6 +1,6 @@
 package main
 
-// #cgo CFLAGS: -I/usr/include
+// #cgo CFLAGS: -I/usr/include/gramine
 // #cgo LDFLAGS: -L/lib/x86_64-linux-gnu -ldl -llibra_tls_attest
 // #include <stdlib.h>
 // #include "ra_tls.h"
