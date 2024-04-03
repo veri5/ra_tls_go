@@ -1,13 +1,14 @@
 package main
 
-// #cgo CFLAGS: -I/usr/include
-// #cgo LDFLAGS: -L/lib/x86_64-linux-gnu -ldl -llibra_tls_attest
-// #include <stdlib.h>
-// #include "ra_tls.h"
-
-import "C"
+/*
+#cgo CFLAGS: -I/usr/include
+#cgo LDFLAGS: -L/lib/x86_64-linux-gnu -ldl -llibra_tls_attest
+#include <stdlib.h>
+#include "ra_tls.h"
+*/
 
 import (
+	"C"
 	"fmt"
 	"unsafe"
 )
