@@ -1,6 +1,6 @@
 package main
 
-// #cgo LDFLAGS: -ldl -llibra_tls_attest
+// #cgo LDFLAGS: -ldl -lra_tls_attest
 // #include <stdlib.h>
 
 import "C"
