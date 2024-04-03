@@ -1,6 +1,7 @@
 package main
 
 // #cgo LDFLAGS: -ldl -lra_tls_attest
+// #include "ra_tls.h"
 // #include <stdlib.h>
 
 import "C"
