@@ -1,6 +1,7 @@
 package main
 
-// #cgo LDFLAGS: -Lra_tls_attest
+// #cgo CFLAGS: -I/usr/include
+// #cgo LDFLAGS: -L/lib/x86_64-linux-gnu -ldl -lra_tls_attest
 // #include <ra_tls.h>
 // #include <stdlib.h>
 import "C"
