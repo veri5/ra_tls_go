@@ -7,6 +7,7 @@ package main
 import "C"
 
 import (
+	"errors"
 	"fmt"
 	"unsafe"
 )
@@ -17,6 +18,13 @@ func createKeyAndCrtDer() ([]byte, []byte, error) {
 	var derKeySize C.size_t
 	var derCrt *C.uchar
 	var derCrtSize C.size_t
+
+	// Load the shared library
+	lib := C.dlopen(C.CString("libra_tls_attest.so"), C.RTLD_NOW)
+	if lib == nil {
+		panic(errors.New("failed to load libra_tls_attest.so"))
+	}
+	defer C.dlclose(lib)
 
 	// Call the C function to create key and certificate
 	ret := C.ra_tls_create_key_and_crt_der(&derKey, &derKeySize, &derCrt, &derCrtSize)
